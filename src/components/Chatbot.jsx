@@ -283,7 +283,7 @@ export default function Chatbot() {
       </div>
 
       <button
-        className={`fixed bottom-6 right-6 w-[60px] h-[60px] rounded-full border-none bg-gradient-to-br from-[#667eea] to-[#764ba2] text-white flex items-center justify-center cursor-pointer z-[9999] shadow-[0_8px_32px_rgba(102,126,234,0.4),0_0_0_1px_rgba(255,255,255,0.1)_inset] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(102,126,234,0.5)] active:translate-y-0 active:scale-95 max-[480px]:bottom-5 max-[480px]:right-5 ${isOpen ? 'rotate-90 scale-90 bg-white/10 shadow-none from-[#4b5563] to-[#374151]' : ''}`}
+        className={`fixed bottom-6 right-6 w-[60px] h-[60px] rounded-full border-none bg-gradient-to-br from-[#667eea] to-[#764ba2] text-white flex items-center justify-center cursor-pointer z-[9999] shadow-[0_8px_32px_rgba(102,126,234,0.4),0_0_0_1px_rgba(255,255,255,0.1)_inset] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(102,126,234,0.5)] active:translate-y-0 active:scale-95 max-[480px]:bottom-5 max-[480px]:right-5 ${isOpen ? 'rotate-90 scale-90 bg-white/10 shadow-none from-[#4b5563] to-[#374151] max-[480px]:opacity-0 max-[480px]:pointer-events-none' : ''}`}
         onClick={() => setIsOpen(!isOpen)}
         title={isOpen ? 'Close chat' : 'Chat with DysBot'}
         id="chatbot-fab"
