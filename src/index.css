@@ -1,19 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-brand-start: #667eea;
+  --color-brand-end: #764ba2;
+  --font-inter: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+  --animate-float-orb: floatOrb 12s ease-in-out infinite;
+  --animate-fade-in-up: fadeInUp 0.6s ease both;
+  --animate-fade-in-down: fadeInDown 0.6s ease both;
+  --animate-shimmer-bar: shimmerBar 2s ease-in-out infinite;
+  --animate-status-pulse: statusPulse 2s ease-in-out infinite;
+  
+  @keyframes floatOrb {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(30px, -20px) scale(1.05); }
+    66% { transform: translate(-20px, 30px) scale(0.97); }
+  }
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes shimmerBar {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(200%); }
+  }
+  @keyframes statusPulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+  font-family: var(--font-inter);
+  @apply text-white antialiased overflow-x-hidden;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+.app-bg {
+  @apply min-h-screen relative overflow-x-hidden;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% -10%, rgba(102, 126, 234, 0.18) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 80% 110%, rgba(118, 75, 162, 0.16) 0%, transparent 60%),
+    linear-gradient(160deg, #0a0818 0%, #100d26 40%, #0f0c24 100%);
 }
 
-button {
-  font-family: inherit;
+.app-orb-1, .app-orb-2 {
+  @apply fixed rounded-full pointer-events-none -z-10 blur-[80px] animate-float-orb;
 }
 
-input {
-  font-family: inherit;
+.app-orb-1 {
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(102, 126, 234, 0.07) 0%, transparent 70%);
+  top: -150px; left: -150px;
+}
+
+.app-orb-2 {
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(118, 75, 162, 0.08) 0%, transparent 70%);
+  bottom: -100px; right: -100px;
+  animation-delay: -6s;
+  animation-direction: reverse;
 }
