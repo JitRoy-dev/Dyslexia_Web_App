@@ -11,7 +11,7 @@ const Header = () => {
         </div>
         <div className="flex flex-col min-w-0">
           <h1 className="m-0 text-[18px] sm:text-[21px] font-extrabold tracking-[-0.5px] text-transparent bg-clip-text bg-gradient-to-r from-white to-[#c4b5fd] truncate">
-            DyslexiaScan
+            Dyscript
           </h1>
           <p className="m-0 text-[11px] font-medium text-white/40 uppercase tracking-[0.5px] hidden sm:block truncate">
             Handwriting Analysis Platform
